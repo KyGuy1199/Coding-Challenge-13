@@ -14,6 +14,9 @@ fetch(apiEndpoint)
     .then((data) => {
         displayProducts(data);
     })
+
+    //Task 4: Handle Errors Gracefully
+    
     .catch((error) => {
         errorMessage.style.display = "block";
         errorMessage.textContent = "Products failed to load, please try again later.";
