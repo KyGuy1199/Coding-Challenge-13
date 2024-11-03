@@ -16,7 +16,7 @@ fetch(apiEndpoint)
     })
 
     //Task 4: Handle Errors Gracefully
-    
+
     .catch((error) => {
         errorMessage.style.display = "block";
         errorMessage.textContent = "Products failed to load, please try again later.";
@@ -38,13 +38,13 @@ fetch(apiEndpoint)
             img.alt = name; 
             
             const companyElement = document.createElement("p");
-            companyElement.textContent = 'Company: ${company}';
+            companyElement.textContent = `Company: ${company}`;
 
             const nameElement = document.createElement("p");
-            nameElement.textContent = 'Product: ${name}';
+            nameElement.textContent = `Product: ${name}`;
 
             const priceElement = document.createElement("p");
-            priceElement.textContent = 'Price: $${(price / 100).toFixed(2)}}';
+            priceElement.textContent = `Price: $${(price / 100).toFixed(2)}}`;
 
             productElement.appendChild(img);
             productElement.appendChild(companyElement);
