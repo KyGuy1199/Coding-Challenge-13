@@ -19,3 +19,35 @@ fetch(apiEndpoint)
         errorMessage.textContent = "Products failed to load, please try again later.";
         console.error("Fetch error:", error);
     });
+
+    //Task 3: Display Product Details Dynamically
+
+    function displayProducts(products) {
+        products.forEach((product) => {
+            const { company, price, name} = product.fields;
+            const imgUrl = product.fields.image[0].url;
+
+            const productElement = document.createElement("div");
+            productElement.className = "product";
+
+            const img = document.createElement("img");
+            img.src = imgUrl;
+            img.alt = name; 
+            
+            const companyElement = document.createElement("p");
+            companyElement.textContent = 'Company: ${company}';
+
+            const nameElement = document.createElement("p");
+            nameElement.textContent = 'Product: ${name}';
+
+            const priceElement = document.createElement("p");
+            priceElement.textContent = 'Price: $${(price / 100).toFixed(2)}}';
+
+            productElement.appendChild(img);
+            productElement.appendChild(companyElement);
+            productElement.appendChild(nameElement);
+            productElement.appendChild(priceElement);
+
+            productContainer.appendChild(productElement);
+        });
+    }
